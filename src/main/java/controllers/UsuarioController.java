@@ -1,4 +1,5 @@
 package controllers;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import models.Usuario;
@@ -8,8 +9,9 @@ import models.Usuario;
 @RestController
 public class UsuarioController {
 
-	  @RequestMapping(value = "/usuario")
-	    public Usuario getUsuario() {
+	  //@RequestMapping
+	@RequestMapping(path = "/alumnos")
+	  public Usuario getUsuario() {
 	        Usuario usuario=new Usuario();
 	        usuario.setNombre("Alex");
 	        usuario.setApellido("Gallozo");
