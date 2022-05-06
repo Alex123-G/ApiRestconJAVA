@@ -1,18 +1,21 @@
 package controllers;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import models.Usuario;
 
 //EN SPRING SE UTILIZAN MUCHO LAS ANOTACION(ESTA SE UTILIZAN COLOCANDO UN ARROBA @) Y EN ESTE CASO
 // LA UTILIZAMOS PARA ESPECIFICAR QUE SE VA UTILIZAR COMO UN CONTROLLADOR PARA UNA API REST
 @RestController
-@EnableAutoConfiguration
-
 public class UsuarioController {
 
-	//Añadiendo cambios
-	  @RequestMapping("/home")
-	    String home() {
-	        return "Hello World!";
+	  @RequestMapping(value = "/usuario")
+	    public Usuario getUsuario() {
+	        Usuario usuario=new Usuario();
+	        usuario.setNombre("Alex");
+	        usuario.setApellido("Gallozo");
+	        usuario.setEmail("alexCorreo");
+	        usuario.setTelefono("1234");
+	        usuario.setPassword(null);
+	        return usuario;
 	    }
 }
