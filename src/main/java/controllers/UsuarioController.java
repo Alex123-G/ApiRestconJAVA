@@ -1,5 +1,6 @@
 package controllers;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import models.Usuario;
@@ -9,9 +10,20 @@ import models.Usuario;
 @RestController
 public class UsuarioController {
 
-	  //@RequestMapping
-	@RequestMapping(path = "/alumnos")
-	  public Usuario getUsuario() {
+	@RequestMapping(value= "usuario/{id}")
+	  public Usuario getUsuario(@PathVariable Long id) {
+	        Usuario usuario=new Usuario();
+	        usuario.setNombre("Alex");
+	        usuario.setId(id);
+	        usuario.setApellido("Gallozo");
+	        usuario.setEmail("alexCorreo");
+	        usuario.setTelefono("1234");
+	        usuario.setPassword(null);
+	        return usuario;
+	    }
+	
+	@RequestMapping(value= "usuario")
+	  public Usuario editar() {
 	        Usuario usuario=new Usuario();
 	        usuario.setNombre("Alex");
 	        usuario.setApellido("Gallozo");
@@ -20,4 +32,5 @@ public class UsuarioController {
 	        usuario.setPassword(null);
 	        return usuario;
 	    }
+
 }
