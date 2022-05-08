@@ -1,4 +1,5 @@
-package controllers;
+package com.CursoLucas.Moy.ApiRest.controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,7 @@ public class UsuarioController {
 	        return usuario;
 	    }
 	
-	@RequestMapping(value= "usuario")
+	@GetMapping(value= "usuario")
 	  public Usuario editar() {
 	        Usuario usuario=new Usuario();
 	        usuario.setNombre("Alex");
