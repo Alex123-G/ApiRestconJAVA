@@ -26,10 +26,19 @@ public class UsuarioController {
 		return usuario;
 	}
 
+	// * @RequestMapping es para indicarle que va ser una ruta para la API,por
+	// * defecto es get y se el puede pasar propiedades como el tipo del
+	// * metodo(get,post,delete); pero tambien existe GetMapping y este ya indica
+	// * que metodo va ser nuestra ruta, en este caso es get osea GetMapping
 	@GetMapping(value = "usuario")
 	public List<Usuario> editar() {
 		List<Usuario> usuarios = new ArrayList<>();
 		Usuario usuario1 = new Usuario();
+		// para el "id" es un tipo int PERO nos sale un error si solo colocamos el
+		// numero,esto es porque es un "LONG int" y es para numero grandes hay
+		// diferentes forma de solucionar esto PERO PARA ESTE CASO LE VAMOS AGREGAR LA
+		// LETRA "L" para que se entienda que el numero es Long
+		usuario1.setId(345l);
 		usuario1.setNombre("Alex");
 		usuario1.setApellido("Gallozo");
 		usuario1.setEmail("alexCorreo");
@@ -37,6 +46,7 @@ public class UsuarioController {
 		usuario1.setPassword(null);
 
 		Usuario usuario2 = new Usuario();
+		usuario1.setId(145l);
 		usuario2.setNombre("Lucas");
 		usuario2.setApellido("Marron");
 		usuario2.setEmail("correo");
@@ -44,6 +54,7 @@ public class UsuarioController {
 		usuario2.setPassword("asdasd");
 
 		Usuario usuario3 = new Usuario();
+		usuario1.setId(45l);
 		usuario3.setNombre("Dilan");
 		usuario3.setApellido("Roco");
 		usuario3.setEmail("afe");
