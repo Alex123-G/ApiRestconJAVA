@@ -3,7 +3,6 @@ package com.CursoLucas.Moy.ApiRest.dao;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import com.CursoLucas.Moy.ApiRest.models.Usuario;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,10 +28,23 @@ public class UsuarioDaoImp implements UsuariodDao {
  // * interfaz se declara la funcion y donde se llame la interfaz se crear el
  // * codigo de la funcion, ESTO SE TIENE QUE SER DEBIDO A UN PATRO DE DISEÑO
  // * (colocar patro de diseño)
+
+ // ! PARA CONECTARNOS A LA BD VAMOS USAR "Hibernate"
  @Override
  public List<Usuario> getUsuarios() {
-  // TODO Auto-generated method stub
-  return null;
- }
+  // * Este query va ser referencia a una clase ,NO a una tabla es por eso que
+  // tenemos que colocar el mismo nombre de la clase de Java y NO a la de las
+  // tablas de la BD.
+  String query = "FROM Usuario";
+  // ? Este codigo lo que nos indica es que vamos usar entitymanaga para
+  // conectarnos
+  // ? a la BD y despues le indicamos que vamos a crear una consulta la cual es la
+  // ? que hemos creado anteriormente y despues llamamos al metodo "getResultList"
+  // ? el cual ejecuta un select from y NOS RETORNAR ESA LISTA.
+  // ? es por eso que colocamos el retur en esa linea y NO creamos una variable
+  // ? (tambien se podria crear una variable que guarde esa lista y despues
+  // ? devolvemos esa lista con la variable guardado)
+  return entityManager.createQuery(query).getResultList();
+ } 
 
 }
