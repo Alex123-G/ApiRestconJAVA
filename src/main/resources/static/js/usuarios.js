@@ -10,9 +10,8 @@ async function cargarUsuario() {
 	let listadoHtml = "";
 
 	for (let usuario of usuarios) {
-		let usuarioHtml =
-			`
-			<tr>
+		const usuarioHtml =
+			` <tr>
 			<td>` +
 			usuario.nombre +
 			`` +

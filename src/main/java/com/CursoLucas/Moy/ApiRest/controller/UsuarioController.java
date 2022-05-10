@@ -34,10 +34,10 @@ public class UsuarioController {
 	public List<Usuario> editar() {
 		List<Usuario> usuarios = new ArrayList<>();
 		Usuario usuario1 = new Usuario();
-		// para el "id" es un tipo int PERO nos sale un error si solo colocamos el
-		// numero,esto es porque es un "LONG int" y es para numero grandes hay
-		// diferentes forma de solucionar esto PERO PARA ESTE CASO LE VAMOS AGREGAR LA
-		// LETRA "L" para que se entienda que el numero es Long
+		// ? para el "id" es un tipo int PERO nos sale un error si solo colocamos el
+		// ? numero,esto es porque es un "LONG int" y es para numero grandes hay
+		// ? diferentes forma de solucionar esto PERO PARA ESTE CASO LE VAMOS AGREGAR
+		// ? LA LETRA "L" para que se entienda que el numero es Long
 		usuario1.setId(345l);
 		usuario1.setNombre("Alex");
 		usuario1.setApellido("Gallozo");
