@@ -45,6 +45,6 @@ public class UsuarioDaoImp implements UsuariodDao {
   // ? (tambien se podria crear una variable que guarde esa lista y despues
   // ? devolvemos esa lista con la variable guardado)
   return entityManager.createQuery(query).getResultList();
- } 
+ }
 
 }
